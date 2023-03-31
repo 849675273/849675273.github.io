@@ -272,24 +272,64 @@
 			margin-top:150px;
 			margin-right: -250px;
 		}
+		#heading{
+			font-size: 30px;
+			position: absolute;
+			z-index: 999;
+			left: 620px;
+			top: -10px;
+			width: 550px;
+			height: 100px;
+		}
 	</style>
 </head>
 
 <body>
-
+	
 	<div id="container">
 	</div>
 	<div id="wrapper">
-		<div id="gym">体育馆</div>
-		<div id="yanbo">演播楼</div>
-		<div id="art">艺术楼</div>
-		<div id="xianjiao">现代教学楼</div>
-		<div id="ershi">第二实验楼</div>
-		<div id="library">图书馆</div>
-		<div id="yishi">第一实验楼</div>
-		<div id="yijiao">第一教学楼</div>
-		<div id="erjiao">第二教学楼</div>
-		<div id="xingzheng">行政楼</div>
+		<h1 id="heading">基于路径可视化的校园导览交互地图</h1>
+		<div id="gym" title="体育馆：
+开放时间：6.30~21.00
+用于体育运动和健身的大型室内场馆。
+它包括一个室内篮球场、四个羽毛球场、看台及其他相关设施。
+一些如“学院杯”的校内比赛会在此举行。
+		">体育馆</div>
+		<div id="yanbo" title="演播楼：
+浙江传媒学院的标志性地点
+是全国高校第一个全链路基于ST2110协议的全IP化4K超高清演播室,也是全国高校第一个“5G+4K”电竞馆。4K电竞综合演播室的建成将进一步推动我校在4K电视节目制作、4K超高清技术领域的高端人才培养，同时极大提升我校作为国内一流、国际知名高水平传媒大学在全国广电传媒行业以及电竞产业领域的引领示范效应。
+		">演播楼</div>
+		<div id="art" title="艺术楼:
+一座供学生学习和展示艺术作品的建筑。
+学生可以在这里学习音乐、戏剧、舞蹈、美术等艺术课程，并有机会在公开场合展示自己的作品。此外，大学艺术楼还可以作为社区文化活动的场地，吸引更多人参与艺术活动。
+		">艺术楼</div>
+		<div id="xianjiao" title="现代教学楼:
+开放时间：6.30~22.30
+应用最新的技术和教学理念，配备最先进的教学设备和设施，为大学师生提供高质量的学习环境和教育资源。
+		">现代教学楼</div>
+		<div id="ershi" title="第二实验楼:
+开放时间：6.30~22.30
+		">第二实验楼</div>
+		<div id="library" title="图书馆:
+开放时间：6.30~22.30
+供学生和教师使用的学术资源中心，它为大学师生提供各种类型的文献资料，如图书、期刊、报纸、电子资源等，以支持学术研究和学习活动。
+		">图书馆</div>
+		<div id="yishi" title="第一实验楼:
+开放时间：6.30~22.30
+		">第一实验楼</div>
+		<div id="yijiao" title="第一教学楼:
+开放时间：6.30~22.30
+为学生提供教学场所，包括教室、实验室、讲堂等。在这些场所中，教师可以开展各种类型的教学活动，如讲课、授课、实验、讨论等。
+		">第一教学楼</div>
+		<div id="erjiao"  title="第二教学楼:
+开放时间：6.30~22.30
+为学生提供教学场所，包括教室、实验室、讲堂等。在这些场所中，教师可以开展各种类型的教学活动，如讲课、授课、实验、讨论等。
+		">第二教学楼</div>
+		<div id="xingzheng" title="行政楼:
+开放时间：0.00~0.00
+行政楼主要是为校园行政管理服务，包括学校的日常行政、财务、人力资源管理等。它是校园中各部门之间沟通和协调的中心，也是学生和教师向学校管理层提出建议和意见的场所。
+		">行政楼</div>
 	</div>
 	<div class="buttonWapper">
 		<button id="huaban">滑板</button>
@@ -496,7 +536,7 @@
 				myChart.setOption(option);
 				demo2.innerHTML = "";
 				distance = Math.floor(GetDistance(814.9822320768662, 1006.9745667036213, 1573.918728637503, 290.33679608585885));
-				demo.innerHTML = '从南大门到体育馆大概'+distance*0.1+'米';
+				demo.innerHTML = '从南大门到体育馆大概'+distance*0.2+'米';
 			};
 
 			var yanbo = document.getElementById("yanbo");
@@ -523,7 +563,7 @@
 				myChart.setOption(option);
 				demo2.innerHTML = "";
 				distance = Math.floor(GetDistance(814.9822320768662, 1006.9745667036213, 177.73662047302304, 369.728955099778));
-				demo.innerHTML = '从南大门到演播楼大概'+distance*0.1+'米';
+				demo.innerHTML = '从南大门到演播楼大概'+distance*0.2+'米';
 			};
 
 			var art = document.getElementById("art");
@@ -551,7 +591,7 @@
 				option.series[0].name = '去艺术楼';
 				demo2.innerHTML = "";
 				distance = Math.floor(GetDistance(814.9822320768662, 1006.9745667036213, 1754.2472829550602, 882.0554517738356));
-				demo.innerHTML = '从南大门到艺术楼大概'+distance*0.1+'米';
+				demo.innerHTML = '从南大门到艺术楼大概'+distance*0.2+'米';
 				myChart.setOption(option);
 
 			};
@@ -574,7 +614,7 @@
 				option.series[0].name = '去现教';
 				demo2.innerHTML = "";
 				distance = Math.floor(GetDistance(814.9822320768662, 1006.9745667036213, 614.9535227272729, 274.12893623737375));
-				demo.innerHTML = '从南大门到现教大概'+distance*0.1+'米';
+				demo.innerHTML = '从南大门到现教大概'+distance*0.2+'米';
 				myChart.setOption(option);
 
 			};
@@ -602,7 +642,7 @@
 				option.series[0].name = '去第二实验楼';
 				demo2.innerHTML = "";
 				distance = Math.floor(GetDistance(814.9822320768662, 1006.9745667036213, 606.7583266932128, 570.0085568489774));
-				demo.innerHTML = '从南大门到第二实验楼大概'+distance*0.1+'米';
+				demo.innerHTML = '从南大门到第二实验楼大概'+distance*0.2+'米';
 				myChart.setOption(option);
 
 			};
@@ -632,7 +672,7 @@
 				option.series[0].name = '去图书馆';
 				demo2.innerHTML = "";
 				distance = Math.floor(GetDistance(814.9822320768662, 1006.9745667036213, 799.1696858832227, 167.3283638211381));
-				demo.innerHTML = '从南大门到图书馆大概'+distance*0.1+'米';
+				demo.innerHTML = '从南大门到图书馆大概'+distance*0.2+'米';
 				myChart.setOption(option);
 
 			};
@@ -652,7 +692,7 @@
 				option.series[0].name = '去第一实验楼';
 				demo2.innerHTML = "";
 				distance = Math.floor(GetDistance(814.9822320768662, 1006.9745667036213, 569.8877660753881, 877.3116879157426));
-				demo.innerHTML = '从南大门到第一实验楼大概'+distance*0.1+'米';
+				demo.innerHTML = '从南大门到第一实验楼大概'+distance*0.2+'米';
 				myChart.setOption(option);
 
 			};
@@ -678,7 +718,7 @@
 				option.series[0].name = '去第一教学楼';
 				demo2.innerHTML = "";
 				distance = Math.floor(GetDistance(814.9822320768662, 1006.9745667036213, 971.5264393939397, 572.1295463784181));
-				demo.innerHTML = '从南大门到第一教学楼大概'+distance*0.1+'米';
+				demo.innerHTML = '从南大门到第一教学楼大概'+distance*0.2+'米';
 				myChart.setOption(option);
 
 			};
@@ -704,7 +744,7 @@
 				option.series[0].name = '去第二教学楼';
 				demo2.innerHTML = "";
 				distance = Math.floor(GetDistance(814.9822320768662, 1006.9745667036213, 985.757730968219, 211.6034931633407));
-				demo.innerHTML = '从南大门到第二教学楼大概'+distance*0.1+'米';
+				demo.innerHTML = '从南大门到第二教学楼大概'+distance*0.2+'米';
 				myChart.setOption(option);
 
 			};
@@ -724,7 +764,7 @@
 				option.series[0].name = '去行政楼';
 				demo2.innerHTML = "";
 				distance = Math.floor(GetDistance(814.9822320768662, 1006.9745667036213, 1017.3828233555064, 931.0743449741315));
-				demo.innerHTML = '从南大门到行政楼大概'+distance*0.1+'米';
+				demo.innerHTML = '从南大门到行政楼大概'+distance*0.2+'米';
 				myChart.setOption(option);
 
 			};
